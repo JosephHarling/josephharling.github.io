@@ -1,17 +1,147 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freelance Accountant</title>
+  <title>Freelance Accountant in Hull | Richard Harling FCCA</title>
+  <meta name="description" content="Richard Harling FCCA is a freelance accountant based in Hull, UK. Offering expert accounting services to small businesses and freelancers. Contact us for personalised support.">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:title" content="Page title">
+  <meta property="og:description" content="Page summary">
+  <meta property="og:image" content="https://example.com/preview.jpg">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:type" content="website">
+  <script src="app.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "My Website",
+    "url": "https://example.com/"
+    "sameAs": [
+    "https://linkedin.com/in/yourname",
+    ]
+  }
+  </script>
 </head>
 <body>
 
-<h1>Hello — my accountant site is working.</h1>
+  <!-- SITE HEADER -->
+  <header>
+    <h1>My Accountant Website</h1>
 
-<p>If you can see this, everything is set up correctly.</p>
+    <!-- Horizontal navigation -->
+    <nav>
+      <a href="#summary">Summary</a>
+      <a href="#booking">Book Call</a>
+      <a href="#contact">Contact</a>
+      <a href="#payment">Payment</a>
+      <a href="#info">More Info</a>
+    </nav>
+  </header>
 
-<script src="app.js"></script>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- SUMMARY PARAGRAPH -->
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </section>
+
+
+    <!-- 15 MINUTE BOOKING FORM -->
+    <section id="booking">
+      <h2>Book a 15-Minute Call</h2>
+
+      <form>
+        <label>
+          Name:
+          <input type="text" name="name" required>
+        </label>
+        <br><br>
+
+        <label>
+          Email:
+          <input type="email" name="email" required>
+        </label>
+        <br><br>
+
+        <label>
+          Preferred Date & Time:
+          <input type="datetime-local" name="datetime" required>
+        </label>
+        <br><br>
+
+        <button type="submit">Request Call</button>
+      </form>
+    </section>
+
+
+    <!-- CONTACT FORM (EMAIL STYLE) -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <!-- In real use this would connect to Formspree or similar -->
+      <form>
+        <label>
+          Your Email:
+          <input type="email" name="email" required>
+        </label>
+        <br><br>
+
+        <label>
+          Message:
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <br><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+
+    <!-- PAYMENT FORM PLACEHOLDER -->
+    <section id="payment">
+      <h2>Payment</h2>
+
+      <!-- Real sites usually use Stripe/PayPal links instead -->
+      <form>
+        <label>
+          Amount (£):
+          <input type="number" name="amount" min="1" required>
+        </label>
+        <br><br>
+
+        <button type="submit">Proceed to Payment</button>
+      </form>
+    </section>
+
+
+    <!-- ANOTHER PARAGRAPH -->
+    <section id="info">
+      <h2>More Information</h2>
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 My Accountant Website</p>
+  </footer>
+
 </body>
+
 </html>
