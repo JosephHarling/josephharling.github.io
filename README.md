@@ -1,2 +1,2 @@
-# accountant-site
-Website for freelance accountant Richard Harling FCCA
+# Joseph Harling Site
+Website for Joseph Harling
