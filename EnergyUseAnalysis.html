@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="canonical" href="https://josephharling.github.io/">
+  <link rel="canonical" href="https://josephharling.github.io">
   <meta property="og:title" content="Harling Business Services | Joseph Harling | Energy Use Analysis">
   <meta property="og:description" content="Energy Use Analysis Services from Joseph Harling">
   <meta property="og:image" content="https://josephharling.github.io/preview.jpg">
-  <meta property="og:url" content="https://josephharling.github.io/">
+  <meta property="og:url" content="https://josephharling.github.io/EnergyUseAnalysis.html">
   <meta property="og:type" content="website">
   <script src="app.js" defer></script>
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Harling Business Services",
-    "url": "https://josephharling.github.io/",
+    "url": "https://josephharling.github.io/EnergyUseAnalysis.html",
     "sameAs": [
     "https://linkedin.com/in/joseph-harling",
     "https://facebook.com/josephharling",
@@ -33,25 +33,58 @@
   <!-- HEADER -->
   <header>
     <h1>Harling Business Services</h1>
+      <!-- Horizontal navigation -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="EnergyUseAnalysis.html">Energy Use Analysis</a></li>
+      </ul>  
+    </nav>
   </header>
-  <!-- Horizontal navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="EnergyUseAnalysis.html">Energy Use Analysis</a></li>
-    </ul>  
-  </nav>
   <!-- MAIN CONTENT -->
   <main>
     <!-- SUMMARY PARAGRAPH -->
     <section id="summary">
-      <h2>Summary</h2>
+      <h2>Energy Usage Analysis</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        This page provides information and analysis on energy usage data.
       </p>
+      <input type="file" id="file" accept=".xlsx,.xls" />
+      <button id="uploadBtn">Upload & Process</button>
+
+      <script>
+        document.getElementById("uploadBtn").addEventListener("click", async () => {
+        const input = document.getElementById("file");
+        if (!input.files.length) return alert("Choose a file first.");
+
+        const formData = new FormData();
+        formData.append("file", input.files[0]);
+
+        const res = await fetch("https://YOUR-API-DOMAIN/upload", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        return alert("Upload failed: " + txt);
+      }
+
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "processed.xlsx";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+    });
+    </script>
     </section>
-    <!-- ANOTHER PARAGRAPH -->
+    <!-- ANOTHER PARAGRAPH 
     <section id="info">
       <h2>More Information</h2>
       <p>
@@ -59,7 +92,7 @@
         nisi ut aliquip ex ea commodo consequat.
       </p>
     </section>
-    <!-- ANOTHER PARAGRAPH -->
+    ANOTHER PARAGRAPH 
     <section id="info1">
       <h2>More Information</h2>
       <p>
@@ -67,6 +100,7 @@
         nisi ut aliquip ex ea commodo consequat.
       </p>
     </section>
+    end-->
   </main>
   <!-- FOOTER -->
   <footer>
